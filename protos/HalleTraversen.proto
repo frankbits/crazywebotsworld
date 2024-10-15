@@ -1,0 +1,157 @@
+#VRML_SIM R2023b utf8
+# Describe the functionality of your PROTO here.
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/WireFence.proto"
+
+
+PROTO HalleTraversen [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "solid"
+]
+{
+ Solid {
+  translation IS translation
+  children [
+    ## Senkrechte
+    Solid {
+      translation 8 3 3
+      children [
+        DEF Traverse6mSenkrecht Shape  {
+        appearance BrushedAluminium {
+        }
+        geometry Box {
+        size 0.3 0.3 6
+        }
+      }
+      ]
+    }
+    Solid {
+      translation 8 -3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation 3 -3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation 3 3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation -2 -3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation -2 3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation -7 3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    Solid {
+      translation -7 -3 3
+      children [USE Traverse6mSenkrecht]
+    }
+    ##Querstreben
+    Solid {
+      translation 8 0  6
+      children [
+        DEF Traverse6mQueer Shape  {
+        appearance BrushedAluminium {
+        }
+        geometry Box {
+        size 0.3 6 0.3
+        }
+      }
+      ]
+    }
+    Solid {
+      translation 3 0 6
+      children [USE Traverse6mQueer]
+    }
+    Solid {
+      translation -2 0 6
+      children [USE Traverse6mQueer]
+    }
+    Solid {
+      translation -7 0 6
+      children [USE Traverse6mQueer]
+    }
+    ##Laengsstreben
+    Solid {
+      translation -4 3 6
+      children [
+        DEF Traverse6mLaengs Shape  {
+        appearance BrushedAluminium {
+        }
+        geometry Box {
+        size 6 0.3 0.3
+        }
+      }
+      ]
+    }
+    Solid {
+      translation 0 3 6
+      children [USE Traverse6mLaengs]
+    }
+    Solid {
+      translation 5 3 6
+      children [USE Traverse6mLaengs]
+    }
+    Solid {
+      translation -4 -3 6
+      children [USE Traverse6mLaengs]
+    }
+    Solid {
+      translation 0 -3 6
+      children [USE Traverse6mLaengs]
+    }
+    Solid {
+      translation 5 -3 6
+      children [USE Traverse6mLaengs]
+    }
+    ### Netze
+    Solid {
+      translation -2 3 3
+      children [
+        DEF MeshLarge Shape  {
+        appearance WireFence {
+          textureTransform TextureTransform {
+            scale 30 30
+          }
+        }
+        geometry Box {
+        size 10 0.01 6
+        }
+      }
+      ]
+    }
+    Solid {
+      translation -2 -3 3
+      children [USE MeshLarge]
+    }
+
+    Solid {
+      translation -7 0 3
+      children [
+        Shape  {
+        appearance WireFence {
+          textureTransform TextureTransform {
+            scale 30 30
+          }
+        }
+        geometry Box {
+        size 0.01 6 6
+        }
+      }
+      ]
+    }
+
+
+
+
+  ]
+  }
+}

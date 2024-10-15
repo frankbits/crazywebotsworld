@@ -1,0 +1,79 @@
+#VRML_SIM R2023b utf8
+# Describe the functionality of your PROTO here.
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/FormedConcrete.proto"
+
+PROTO Halle [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "solid"
+]
+{
+ Solid {
+  translation IS translation
+  children [
+    ## WandLang
+    Solid {
+      translation -10 15 5
+      children [
+        DEF WandLang Shape  {
+        appearance FormedConcrete {
+        }
+        geometry Box {
+        size 0.1 40 10
+        }
+      }
+      ]
+    }
+    Solid {
+        translation 10 15 5
+        children [USE WandLang]
+    }
+     ## WandKurz
+    Solid {
+      translation 0 -5 5
+      children [
+        DEF WandKurz Shape  {
+        appearance FormedConcrete {
+        }
+        geometry Box {
+        size 20 0.1 10
+        }
+      }
+      ]
+    }
+     Solid {
+        translation 0 35 5
+        children [USE WandKurz]
+    }
+     ## Decke
+    Solid {
+      translation 0 15 10
+      children [
+        DEF Decke Shape  {
+        appearance FormedConcrete {
+        }
+        geometry Box {
+        size 20 40 0.1
+        }
+      }
+      ]
+    }
+    Solid {
+        translation 0 15 -0.1
+        children [USE Decke]
+    }
+
+
+      
+
+
+
+
+
+
+
+
+
+  ]
+ }
+}
