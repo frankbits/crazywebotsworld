@@ -60,7 +60,7 @@ Hilfreich, nicht notwendig:
 ### macOS
 1. Setze den `WEBOTS_HOME` Pfad: 
     ```bash
-    export WEBOTS_HOME=/home/-username-/webots`
+    export WEBOTS_HOME=/pfad/zu/webots`
     ```
 2. Controller starten: 
     ```bash
