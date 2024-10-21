@@ -15,9 +15,13 @@ Stelle sicher, dass du den **tha** Branch dieses Repositories klonst oder herunt
 git clone -b tha https://github.com/DynamicSwarms/crazywebotsworld.git
 ```
 
+# 3. Crazyflie Welt aus diesem Repository öffnen
+
+Die Welt befinet sich in `crazywebotsworld/worlds/crazyflie.wbt`
+
 ❗ Achte darauf beim schließen/verändern der Welt diese nicht abzuspeichern, sodass Crazyflie und Zauberstab immer in Ursprungsposition starten. 
 
-# 3. Controller für Crazyflie und Zauberstab (Wand) bauen
+# 4. Controller für Crazyflie und Zauberstab (Wand) bauen
 
 ### Crazyflie Controller
 1. Rechtsklick auf die Crazyflie im Scene-Tree und wähle **Edit Controller**.
@@ -27,7 +31,7 @@ git clone -b tha https://github.com/DynamicSwarms/crazywebotsworld.git
 ### Zauberstab Controller (Controllable Wand):
 1. Wiederhole die oben genannten Schritte für den Zauberstab.
 
-# 4. Externen Controller starten
+# 5. Externen Controller starten
 
 Hilfreich, nicht notwendig:
 [Externe Controller ausführen](https://cyberbotics.com/doc/guide/running-extern-robot-controllers?tab-os=windows)
@@ -45,7 +49,7 @@ Hilfreich, nicht notwendig:
 
 1. Setze den `WEBOTS_HOME` Pfad: 
     ```bash
-    export WEBOTS_HOME=/home/-username-/webots`
+    export WEBOTS_HOME=/usr/local/webots`
     ```
 
 2. Controller starten: 

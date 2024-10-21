@@ -1,6 +1,8 @@
 from controller import Supervisor
 from threading import Thread
 
+from typing import List
+
 class CrazyflieExternController(Supervisor):
     def __init__(self, run):
         super().__init__()
@@ -17,12 +19,12 @@ class CrazyflieExternController(Supervisor):
         while self.step(timestep) != -1:
             pass
     
-    def setTarget(self, target: list[float]) -> None:
+    def setTarget(self, target: List[float]) -> None:
         """
         Set the target position of the Crazyflie. 
 
         Args: 
-            target (list[float]): A list of 3 float describing the x, y and z coordinates.
+            target (List[float]): A list of 3 float describing the x, y and z coordinates.
         Returns: 
             None        
         """
