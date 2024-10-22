@@ -36,13 +36,15 @@ Die Welt befinet sich in `crazywebotsworld/worlds/crazyflie.wbt`
 Hilfreich, nicht notwendig:
 [Externe Controller ausführen](https://cyberbotics.com/doc/guide/running-extern-robot-controllers?tab-os=windows)
 
+Bei mehreren Webots-Instanzen im selben Netzwerk kann es sein, dass der Port von Webots automatisch angepasst wird. 
+Der korrekte Port wird beim öffnen der Welt in der Webots-Console angezeigt.
 
 ### Windows:
 1. Kopiere die Datei `webots-controller.exe` aus dem Pfad `C:\Program Files\Webots\msys64\mingw64\bin` in das `crazywebotsworld` Verzeichnis.
 2. Controller starten:
 
    ```bash
-   .\webots-controller.exe --protocol=tcp --ip-address=127.0.0.1 --robot-name=cf0_ros_ctrl .\crazyflie-example.py
+   .\webots-controller.exe --protocol=tcp --ip-address=127.0.0.1 --port=1234 --robot-name=cf0_ros_ctrl .\crazyflie_example.py
    ```
 
 ### Linux
@@ -54,7 +56,7 @@ Hilfreich, nicht notwendig:
 
 2. Controller starten: 
     ```bash
-    $WEBOTS_HOME/webots-controller --protocol=tcp --ip-address=127.0.0.1 --robot-name=cf0_ros_ctrl crazyflie-example.py
+    $WEBOTS_HOME/webots-controller --protocol=tcp --ip-address=127.0.0.1 --port=1234 --robot-name=cf0_ros_ctrl crazyflie_example.py
     ```
 
 ### macOS
@@ -64,7 +66,7 @@ Hilfreich, nicht notwendig:
     ```
 2. Controller starten: 
     ```bash
-    $WEBOTS_HOME/Contents/MacOS/webots-controller --protocol=tcp --ip-address=127.0.0.1 --robot-name=cf0_ros_ctrl crazyflie-example.py
+    $WEBOTS_HOME/Contents/MacOS/webots-controller --protocol=tcp --ip-address=127.0.0.1 --port=1234 --robot-name=cf0_ros_ctrl crazyflie_example.py
     ```
 
 
