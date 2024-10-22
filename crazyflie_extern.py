@@ -11,6 +11,7 @@ class CrazyflieExternController(Supervisor):
         self.wb_node = self._getNode(self)
   
         self.target_field = self.wb_node.getField('target')
+        self.position_field = self.wb_node.getField('translation')
         self.range_finder = self.wb_node.getField('zrange')
 
         thread = Thread(target=run)
@@ -29,6 +30,15 @@ class CrazyflieExternController(Supervisor):
             None        
         """
         self.target_field.setSFVec3f(target)
+
+    def getPosition(self) -> List[float]:
+        """
+        Get the position of the Crazyflie.
+        
+        Returns:
+            float[]: The position of the Crazyflie as x, y, z coordinates in meter
+        """
+        return self.position_field.getSFVec3f()
     
     def getRange(self) -> float:
         """
@@ -37,7 +47,6 @@ class CrazyflieExternController(Supervisor):
 
         Returns: 
             float: The current range in mm as a float
-
         """
         return self.range_finder.getSFFloat()
 

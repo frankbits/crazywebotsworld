@@ -9,7 +9,7 @@ class Crazyflie(CrazyflieExternController):
     def run(self):
         self.setTarget([1.0,1.0, 1.0])
         for i in range(3):
-            print(self.getRange())
+            print(self.getRange(), self.getPosition())
             time.sleep(1)
         time.sleep(3)
         self.setTarget([0,0,0])
