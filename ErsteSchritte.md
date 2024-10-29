@@ -51,7 +51,7 @@ Der korrekte Port wird beim öffnen der Welt in der Webots-Console angezeigt.
 
 1. Setze den `WEBOTS_HOME` Pfad: 
     ```bash
-    export WEBOTS_HOME=/usr/local/webots`
+    export WEBOTS_HOME=/usr/local/webots
     ```
 
 2. Controller starten: 
@@ -62,7 +62,7 @@ Der korrekte Port wird beim öffnen der Welt in der Webots-Console angezeigt.
 ### macOS
 1. Setze den `WEBOTS_HOME` Pfad: 
     ```bash
-    export WEBOTS_HOME=/pfad/zu/webots`
+    export WEBOTS_HOME=/pfad/zu/webots
     ```
 2. Controller starten: 
     ```bash

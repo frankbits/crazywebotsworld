@@ -1,10 +1,10 @@
-# Copyright 1996-2021 Cyberbotics Ltd.
+# Copyright 1996-2023 Cyberbotics Ltd.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#     http://www.apache.org/licenses/LICENSE-2.0
+#     https://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,7 +35,7 @@
 ###
 ### ---- C Sources ----
 ### if your program uses several C source files:
-C_SOURCES = crazyflie_controller.c 
+### C_SOURCES = my_plugin.c my_clever_algo.c my_graphics.c
 ###
 ### ---- C++ Sources ----
 ### if your program uses several C++ source files:
@@ -43,7 +43,7 @@ C_SOURCES = crazyflie_controller.c
 ###
 ### ---- Compilation options ----
 ### if special compilation flags are necessary:
-CFLAGS = -Wno-unused-variable
+### CFLAGS = -Wno-unused-result
 ###
 ### ---- Linked libraries ----
 ### if your program needs additional libraries:
@@ -68,5 +68,5 @@ CFLAGS = -Wno-unused-variable
 ### Do not modify: this includes Webots global Makefile.include
 null :=
 space := $(null) $(null)
-WEBOTS_HOME_PATH=$(subst $(space),\ ,$(strip $(subst \,/,$(WEBOTS_HOME))))
+WEBOTS_HOME_PATH?=$(subst $(space),\ ,$(strip $(subst \,/,$(WEBOTS_HOME))))
 include $(WEBOTS_HOME_PATH)/resources/Makefile.include
